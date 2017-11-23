@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script> 
+    <script src="main.js"></script>
+    <title>Angular Jugador app</title>
+    
+</head>
+<body ng-app="angularJugador" ng-controller="mainController">
+	<div class="container"> 
+    <!--Cabecera-->
+    	<div class="jumbotron text-center">
+        	<h1>Angular Jugadores List <span class="label label-info">{{ jugadors.length }}</span></h1>
+        </div>
+        <!--Lista de Todos-->
+        <div id="jugador-list" class="row">
+        	<div class="col-sm-4 col-sm-offset-4">
+            	<div ng-repeat="items in jugadors">
+                    	<span>{{items.nombre}}</span> 
+                 </div>
+             </div>
+         </div>
+         <!--Formulario para insertar nuevos Todo--> 			
+         <div id="jugador-form" class="row">
+        	<div class="col-sm-8 col-sm-offset-2 text-center">
+            	<form>
+                	<div class="form-group">
+                    	<input type="text" class="form-control input-lg text-center" placeholder="Insertar un jugador" ng-model="formData.text">
+                    </div>
+                    <button class="btn btn-primary btn-lg" ng-click="">Añadir</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
